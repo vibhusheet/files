@@ -44,7 +44,7 @@ Plugin 'scrooloose/syntastic'
 
 " Beautify code
 let python_highlight_all=1
-syntax=1
+" syntax=1
 
 " Autocomplete for python
 Plugin 'Valloric/YourCompleteMe'
@@ -53,8 +53,13 @@ map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 " All of your Plugins must be added before the following line
 call vundle#end() " required
+
+" Enable file type detection and do language-dependent identing
 filetype plugin indent on " required
-"
+
+" Switch syntex highlighting on
+ syntax on :colorscheme blue
+
 " Brief list of commands
 " :PluginList - Lists configured plugins
 " :PluginInstall - Installs plugins; append '!' to update or use :PluginUpdate
@@ -66,12 +71,6 @@ filetype plugin indent on " required
 
 " Make backspace behavior sane
  set backspace=indent,eol,start
-
-" Switch sytex highlighting on
-syntax on
-
-" Enable file type detection and do language-dependent identing
-filetype plugin indent on
 
 " Show line numbers
 set number
