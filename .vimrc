@@ -19,9 +19,6 @@ Plugin 'vundlevim/vundle.vim'
 " Keep Plugin commands between vundle#begin/end.
 Plugin 'tpope/vim-fugitive'
 
-" plugin from http://vim-scripts.org/vim/scripts.html
-Plugin 'git://git.wincent.com/command-t.git'
-
 " The sparkup vim script is in a subdirectory of this repo called vim
 " Pass the path to set the runtime properly
 Plugin 'rstacruz/sparkup', {'rtp':'vim/'}
@@ -47,9 +44,9 @@ let python_highlight_all=1
 " syntax=1
 
 " Autocomplete for python
-Plugin 'Valloric/YourCompleteMe'
-let g:ycm_autoclose_preview_window_after_completion=1
-map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+" Plugin 'Valloric/YourCompleteMe'
+" let g:ycm_autoclose_preview_window_after_completion=1
+" map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 " All of your Plugins must be added before the following line
 call vundle#end() " required
@@ -58,7 +55,7 @@ call vundle#end() " required
 filetype plugin indent on " required
 
 " Switch syntex highlighting on
- syntax on :colorscheme blue
+syntax on :colorscheme blue
 
 " Brief list of commands
 " :PluginList - Lists configured plugins
@@ -70,7 +67,7 @@ filetype plugin indent on " required
 
 
 " Make backspace behavior sane
- set backspace=indent,eol,start
+set backspace=indent,eol,start
 
 " Show line numbers
 set number
@@ -85,6 +82,12 @@ set expandtab
 set shiftwidth=4
 set softtabstop=4
 
+command! WQ wq
+command! Wq wq
+command! Wqa wqa
+command! W w
+command! Q q
+
 " Specify endoffile and tab characters
 set listchars=eol:¬,tab:▷\
 
@@ -95,3 +98,4 @@ highlight ColorColumn ctermbg=5
 " Configure Isort for linting
 map <leader>i :Isort<cr>
 command! -range=% Isort :<line1>,<line2>! isort -
+
